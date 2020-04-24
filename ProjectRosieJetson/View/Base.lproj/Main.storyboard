@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pr5-bR-Kst">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="ih2-qW-AHU">
+            <objects>
+                <viewController id="Alt-nw-wo6" customClass="MainController" customModule="ProjectRosieJetson" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DkV-Mq-A8p">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ieh-X0-Obp">
+                                <rect key="frame" x="20" y="118" width="374" height="82"/>
+                                <string key="text">Supermercado
+System</string>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="GDW-U9-rUy">
+                                <rect key="frame" x="30" y="707" width="354" height="125"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDM-PK-3oa">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="uep-bk-32Z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" title=" Encerrar expediente" image="briefcase.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="IfQ-jb-Qsz" kind="show" id="uj8-OJ-iIL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNW-Tw-gWr">
+                                        <rect key="frame" x="0.0" y="75" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vBu-kH-sbr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" title=" Abrir caixa" image="cart.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="jWH-nS-dMx" kind="presentation" id="eWm-d7-M60"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="bag" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ioW-NZ-Qsb">
+                                <rect key="frame" x="20" y="229.5" width="374" height="446"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ioW-NZ-Qsb" firstAttribute="top" secondItem="ieh-X0-Obp" secondAttribute="bottom" constant="30" id="8Zc-dT-y5W"/>
+                            <constraint firstItem="GDW-U9-rUy" firstAttribute="leading" secondItem="5Xx-pq-zr4" secondAttribute="leading" constant="30" id="KPj-Hi-0gk"/>
+                            <constraint firstItem="5Xx-pq-zr4" firstAttribute="bottom" secondItem="GDW-U9-rUy" secondAttribute="bottom" constant="30" id="LxO-Qi-AHH"/>
+                            <constraint firstItem="ioW-NZ-Qsb" firstAttribute="left" secondItem="ieh-X0-Obp" secondAttribute="left" id="McP-wZ-njl"/>
+                            <constraint firstItem="ieh-X0-Obp" firstAttribute="leading" secondItem="5Xx-pq-zr4" secondAttribute="leading" constant="20" id="PmT-0S-FzD"/>
+                            <constraint firstItem="ieh-X0-Obp" firstAttribute="centerX" secondItem="5Xx-pq-zr4" secondAttribute="centerX" id="YBg-8z-Qv6"/>
+                            <constraint firstItem="5Xx-pq-zr4" firstAttribute="trailing" secondItem="GDW-U9-rUy" secondAttribute="trailing" constant="30" id="Zh5-0c-E2z"/>
+                            <constraint firstItem="ieh-X0-Obp" firstAttribute="top" secondItem="5Xx-pq-zr4" secondAttribute="top" constant="30" id="cPo-pe-4yt"/>
+                            <constraint firstItem="ioW-NZ-Qsb" firstAttribute="right" secondItem="ieh-X0-Obp" secondAttribute="right" id="ddw-vR-KoA"/>
+                            <constraint firstItem="GDW-U9-rUy" firstAttribute="centerX" secondItem="5Xx-pq-zr4" secondAttribute="centerX" id="tg0-1f-U9j"/>
+                            <constraint firstItem="GDW-U9-rUy" firstAttribute="top" secondItem="ioW-NZ-Qsb" secondAttribute="bottom" constant="30" id="u6j-my-xD5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5Xx-pq-zr4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Home" id="i6J-yG-h2V"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H5n-JJ-1WZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1397.1014492753625" y="124.55357142857142"/>
+        </scene>
+        <!--Caixa-->
+        <scene sceneID="3lF-NL-N2f">
+            <objects>
+                <viewController id="jWH-nS-dMx" customClass="CashierController" customModule="ProjectRosieJetson" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KxB-PG-9bX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caixa " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mbp-kb-tod">
+                                <rect key="frame" x="20" y="30" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Zzt-Mq-jF6">
+                                <rect key="frame" x="30" y="653" width="354" height="125"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e57-Hw-Uwp">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="KIu-RP-ehh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" title=" Iniciar venda" image="cart.badge.plus" catalog="system">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="5pH-Pb-BYM" kind="presentation" id="UIm-WW-00B"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIc-sk-vIc">
+                                        <rect key="frame" x="0.0" y="75" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Dy0-AM-8by"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" title=" Fechar caixa" image="cart" catalog="system">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" image="cart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="7K8-wB-U3S">
+                                <rect key="frame" x="20" y="102.5" width="374" height="520.5"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Zzt-Mq-jF6" firstAttribute="leading" secondItem="6Km-A1-cGc" secondAttribute="leading" constant="30" id="6Ws-VF-anc"/>
+                            <constraint firstItem="Mbp-kb-tod" firstAttribute="leading" secondItem="6Km-A1-cGc" secondAttribute="leading" constant="20" id="6Yc-eA-lX4"/>
+                            <constraint firstItem="6Km-A1-cGc" firstAttribute="trailing" secondItem="Mbp-kb-tod" secondAttribute="trailing" constant="20" id="BEJ-eO-9BQ"/>
+                            <constraint firstItem="Zzt-Mq-jF6" firstAttribute="top" secondItem="7K8-wB-U3S" secondAttribute="bottom" constant="30" id="GxH-cT-df4"/>
+                            <constraint firstItem="6Km-A1-cGc" firstAttribute="bottom" secondItem="Zzt-Mq-jF6" secondAttribute="bottom" constant="30" id="KfI-Oc-6ha"/>
+                            <constraint firstItem="Mbp-kb-tod" firstAttribute="top" secondItem="6Km-A1-cGc" secondAttribute="top" constant="30" id="THr-0x-45n"/>
+                            <constraint firstItem="Zzt-Mq-jF6" firstAttribute="centerX" secondItem="6Km-A1-cGc" secondAttribute="centerX" id="TRI-Tb-PX8"/>
+                            <constraint firstItem="7K8-wB-U3S" firstAttribute="top" secondItem="Mbp-kb-tod" secondAttribute="bottom" constant="30" id="cSc-WT-6KN"/>
+                            <constraint firstItem="7K8-wB-U3S" firstAttribute="left" secondItem="Mbp-kb-tod" secondAttribute="left" id="jmg-97-A7Q"/>
+                            <constraint firstItem="6Km-A1-cGc" firstAttribute="trailing" secondItem="Zzt-Mq-jF6" secondAttribute="trailing" constant="30" id="kKN-fb-AVs"/>
+                            <constraint firstItem="7K8-wB-U3S" firstAttribute="right" secondItem="Mbp-kb-tod" secondAttribute="right" id="ncm-3c-rPs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Km-A1-cGc"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Caixa" id="HJ0-dn-4BI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LqA-3O-SQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2325" y="125"/>
+        </scene>
+        <!--Venda-->
+        <scene sceneID="00Y-qL-GhW">
+            <objects>
+                <tableViewController id="Krh-jm-iMe" customClass="SaleController" customModule="ProjectRosieJetson" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="OXH-HC-12W">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" textLabel="lwp-DA-qcU" detailTextLabel="HiE-W8-7Fk" imageView="VAG-OW-1jZ" style="IBUITableViewCellStyleValue1" id="V3m-Zt-dT1" customClass="ProductTableViewCell" customModule="ProjectRosieJetson" customModuleProvider="target">
+                                <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V3m-Zt-dT1" id="onY-ow-0vp">
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Código do produto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lwp-DA-qcU">
+                                            <rect key="frame" x="59" y="12" width="144" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Nome do produto" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HiE-W8-7Fk">
+                                            <rect key="frame" x="219.5" y="12" width="134.5" height="20.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="bag.fill" catalog="system" id="VAG-OW-1jZ">
+                                            <rect key="frame" x="22.5" y="11" width="19" height="19"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="productCode" destination="lwp-DA-qcU" id="lCv-ju-biQ"/>
+                                    <outlet property="productName" destination="HiE-W8-7Fk" id="uH0-hn-Khs"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="Krh-jm-iMe" id="bD2-gC-NZm"/>
+                            <outlet property="delegate" destination="Krh-jm-iMe" id="eWI-Kc-gOb"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Venda" id="53r-V1-ZVt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="m6T-a1-Kg2">
+                            <connections>
+                                <action selector="addButtonAction:" destination="Krh-jm-iMe" id="x15-Of-xg1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zOM-h4-UrW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4160.8695652173919" y="124.55357142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1UZ-Uc-MHe">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pr5-bR-Kst" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="W37-Qv-5Ai">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Alt-nw-wo6" kind="relationship" relationship="rootViewController" id="LjP-Db-vay"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7n-7F-9ET" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="486.95652173913049" y="124.55357142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5gm-7M-lnz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5pH-Pb-BYM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9yH-rT-scB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Krh-jm-iMe" kind="relationship" relationship="rootViewController" id="obT-Gt-5qu"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t8k-Lu-qpk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3250.7246376811595" y="124.55357142857142"/>
+        </scene>
+        <!--Gerente-->
+        <scene sceneID="Cg1-2x-Mru">
+            <objects>
+                <viewController id="IfQ-jb-Qsz" customClass="ManagerController" customModule="ProjectRosieJetson" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ggw-BN-Fzb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Funções do Gerente" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmX-nG-QMH">
+                                <rect key="frame" x="20" y="118" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="hbS-Tv-CCb">
+                                <rect key="frame" x="30" y="707" width="354" height="125"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jHO-PS-Iqy">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="xZv-uv-NO4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" title=" Retirar valores" image="briefcase.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLr-Ki-dk7">
+                                        <rect key="frame" x="0.0" y="75" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vtW-rz-K9R"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" title=" Imprimir recibo" image="printer.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="briefcase" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5F2-6M-Bxf">
+                                <rect key="frame" x="20" y="190" width="374" height="486"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="hbS-Tv-CCb" firstAttribute="centerX" secondItem="VWF-rQ-g5o" secondAttribute="centerX" id="HjP-Jx-Mxj"/>
+                            <constraint firstItem="5F2-6M-Bxf" firstAttribute="top" secondItem="ZmX-nG-QMH" secondAttribute="bottom" constant="30" id="IIk-Fc-Gez"/>
+                            <constraint firstItem="ZmX-nG-QMH" firstAttribute="leading" secondItem="VWF-rQ-g5o" secondAttribute="leading" constant="20" id="IzC-hF-Cns"/>
+                            <constraint firstItem="hbS-Tv-CCb" firstAttribute="top" secondItem="5F2-6M-Bxf" secondAttribute="bottom" constant="30" id="LP7-PI-Crh"/>
+                            <constraint firstItem="hbS-Tv-CCb" firstAttribute="leading" secondItem="VWF-rQ-g5o" secondAttribute="leading" constant="30" id="Mij-Fh-5Ed"/>
+                            <constraint firstItem="5F2-6M-Bxf" firstAttribute="right" secondItem="ZmX-nG-QMH" secondAttribute="right" id="QSW-TO-PNF"/>
+                            <constraint firstItem="VWF-rQ-g5o" firstAttribute="trailing" secondItem="hbS-Tv-CCb" secondAttribute="trailing" constant="30" id="cFP-e1-BVy"/>
+                            <constraint firstItem="ZmX-nG-QMH" firstAttribute="top" secondItem="VWF-rQ-g5o" secondAttribute="top" constant="30" id="euQ-w1-NRC"/>
+                            <constraint firstItem="5F2-6M-Bxf" firstAttribute="left" secondItem="ZmX-nG-QMH" secondAttribute="left" id="kv1-Oh-vpI"/>
+                            <constraint firstItem="VWF-rQ-g5o" firstAttribute="bottom" secondItem="hbS-Tv-CCb" secondAttribute="bottom" constant="30" id="rG1-Z2-IUN"/>
+                            <constraint firstItem="ZmX-nG-QMH" firstAttribute="centerX" secondItem="VWF-rQ-g5o" secondAttribute="centerX" id="syt-N3-tX3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VWF-rQ-g5o"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Gerente" id="21o-nf-KYL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qKn-Uv-L9o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1397" y="858"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bag" catalog="system" width="128" height="128"/>
+        <image name="bag.fill" catalog="system" width="128" height="128"/>
+        <image name="briefcase" catalog="system" width="128" height="102"/>
+        <image name="briefcase.fill" catalog="system" width="128" height="102"/>
+        <image name="cart" catalog="system" width="128" height="102"/>
+        <image name="cart.badge.plus" catalog="system" width="128" height="98"/>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="printer.fill" catalog="system" width="128" height="111"/>
+    </resources>
+</document>
