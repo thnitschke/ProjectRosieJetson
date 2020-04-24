@@ -10,9 +10,17 @@ import Foundation
 
 struct Sale: Codable {
     
-    let id: UUID = UUID()
+    let id = UUID()
     
-    var products: [Product]
-    var payment: Payment
+    var products: [Product] = []
+    var payment: Payment?
+    var date: Date = Date()
     
+    var total: Double {
+        products.reduce(0.0) { $0 + $1.price }
+    }
+    
+    mutating func pay(method: Payment.PaymentMethod) {
+        payment = Payment(type: method.rawValue)
+    }
 }

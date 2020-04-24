@@ -17,8 +17,9 @@ class ProductTableViewCell: UITableViewCell {
         super.awakeFromNib()
     }
     
-    func configureCell() {
-        
+    func configureCell(code: String, name: String) {
+        self.productCode.text = code
+        self.productName.text = name
     }
     
 }

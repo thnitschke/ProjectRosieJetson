@@ -10,7 +10,7 @@ import Foundation
 
 struct Product: Codable {
     
-    let id: UUID = UUID()
+    let id = UUID()
     private let priceChoices = [
         1.99,
         2.50,

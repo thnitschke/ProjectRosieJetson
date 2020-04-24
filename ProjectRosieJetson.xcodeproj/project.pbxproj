@@ -20,6 +20,8 @@
 		E4A51AF824525BC200542189 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A51AF724525BC200542189 /* Product.swift */; };
 		E4A51AFA24525BE800542189 /* Sale.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A51AF924525BE800542189 /* Sale.swift */; };
 		E4A51AFC24525BEF00542189 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A51AFB24525BEF00542189 /* Payment.swift */; };
+		E4A51AFE245267C900542189 /* Cashier.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A51AFD245267C900542189 /* Cashier.swift */; };
+		E4A51B0024526B9400542189 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4A51AFF24526B9400542189 /* Operator.swift */; };
 		E4D6971F24515F5E0034CC47 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D6971E24515F5E0034CC47 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +41,8 @@
 		E4A51AF724525BC200542189 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E4A51AF924525BE800542189 /* Sale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sale.swift; sourceTree = "<group>"; };
 		E4A51AFB24525BEF00542189 /* Payment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		E4A51AFD245267C900542189 /* Cashier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cashier.swift; sourceTree = "<group>"; };
+		E4A51AFF24526B9400542189 /* Operator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		E4D6971E24515F5E0034CC47 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +63,7 @@
 				E4A51AFB24525BEF00542189 /* Payment.swift */,
 				E4A51AF724525BC200542189 /* Product.swift */,
 				E4A51AF924525BE800542189 /* Sale.swift */,
+				E4A51AFD245267C900542189 /* Cashier.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 		E414E474245252C0002AA523 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E4A51AFF24526B9400542189 /* Operator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -204,7 +210,9 @@
 			files = (
 				E414E47224525292002AA523 /* ManagerController.swift in Sources */,
 				E414E476245253B8002AA523 /* ProductTableViewCell.swift in Sources */,
+				E4A51B0024526B9400542189 /* Operator.swift in Sources */,
 				E4A51AFA24525BE800542189 /* Sale.swift in Sources */,
+				E4A51AFE245267C900542189 /* Cashier.swift in Sources */,
 				E4D6971F24515F5E0034CC47 /* TestView.swift in Sources */,
 				E47F7EC22451171600FE45BD /* MainController.swift in Sources */,
 				E414E47024525225002AA523 /* SaleController.swift in Sources */,

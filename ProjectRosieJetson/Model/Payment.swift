@@ -10,14 +10,22 @@ import Foundation
 
 struct Payment: Codable {
     
-    let id: UUID = UUID()
+    let id = UUID()
     var type: Int
     
-    func externalTransactionTime() -> Int {
+    init(type: Int) {
+        self.type = type
+        
+        if type != PaymentMethod.cash.rawValue {
+            sleep(externalTransactionTime())
+        }
+    }
+    
+    func externalTransactionTime() -> UInt32 {
         return 2
     }
     
-    enum PaymentType: Int {
+    enum PaymentMethod: Int {
         case cash, creditCard, debitCard
         
         func description() -> String {

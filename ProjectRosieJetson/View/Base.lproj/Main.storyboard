@@ -43,7 +43,7 @@ System</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="IfQ-jb-Qsz" kind="show" id="uj8-OJ-iIL"/>
+                                            <segue destination="IfQ-jb-Qsz" kind="show" identifier="finishSession" id="uj8-OJ-iIL"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNW-Tw-gWr">
@@ -63,7 +63,7 @@ System</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="jWH-nS-dMx" kind="presentation" id="eWm-d7-M60"/>
+                                            <action selector="openCashierAction:" destination="Alt-nw-wo6" eventType="touchUpInside" id="d73-b4-nAB"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -89,6 +89,9 @@ System</string>
                         <viewLayoutGuide key="safeArea" id="5Xx-pq-zr4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="i6J-yG-h2V"/>
+                    <connections>
+                        <segue destination="jWH-nS-dMx" kind="presentation" identifier="openCashier" id="JBx-TR-jix"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H5n-JJ-1WZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -128,7 +131,7 @@ System</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="5pH-Pb-BYM" kind="presentation" id="UIm-WW-00B"/>
+                                            <segue destination="1NP-V4-F75" kind="presentation" identifier="startSale" id="Ush-sv-pIn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hIc-sk-vIc">
@@ -147,6 +150,9 @@ System</string>
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="closeCashierAction:" destination="jWH-nS-dMx" eventType="touchUpInside" id="wux-T7-rWg"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -171,69 +177,13 @@ System</string>
                         <viewLayoutGuide key="safeArea" id="6Km-A1-cGc"/>
                     </view>
                     <navigationItem key="navigationItem" title="Caixa" id="HJ0-dn-4BI"/>
+                    <connections>
+                        <outlet property="cashierTitle" destination="Mbp-kb-tod" id="ySu-Xc-ZGG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqA-3O-SQ4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2325" y="125"/>
-        </scene>
-        <!--Venda-->
-        <scene sceneID="00Y-qL-GhW">
-            <objects>
-                <tableViewController id="Krh-jm-iMe" customClass="SaleController" customModule="ProjectRosieJetson" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" sectionIndexMinimumDisplayRowCount="1" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="OXH-HC-12W">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" textLabel="lwp-DA-qcU" detailTextLabel="HiE-W8-7Fk" imageView="VAG-OW-1jZ" style="IBUITableViewCellStyleValue1" id="V3m-Zt-dT1" customClass="ProductTableViewCell" customModule="ProjectRosieJetson" customModuleProvider="target">
-                                <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V3m-Zt-dT1" id="onY-ow-0vp">
-                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Código do produto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lwp-DA-qcU">
-                                            <rect key="frame" x="59" y="12" width="144" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Nome do produto" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HiE-W8-7Fk">
-                                            <rect key="frame" x="219.5" y="12" width="134.5" height="20.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="bag.fill" catalog="system" id="VAG-OW-1jZ">
-                                            <rect key="frame" x="22.5" y="11" width="19" height="19"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </imageView>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="productCode" destination="lwp-DA-qcU" id="lCv-ju-biQ"/>
-                                    <outlet property="productName" destination="HiE-W8-7Fk" id="uH0-hn-Khs"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <sections/>
-                        <connections>
-                            <outlet property="dataSource" destination="Krh-jm-iMe" id="bD2-gC-NZm"/>
-                            <outlet property="delegate" destination="Krh-jm-iMe" id="eWI-Kc-gOb"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Venda" id="53r-V1-ZVt">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="m6T-a1-Kg2">
-                            <connections>
-                                <action selector="addButtonAction:" destination="Krh-jm-iMe" id="x15-Of-xg1"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zOM-h4-UrW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4160.8695652173919" y="124.55357142857142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1UZ-Uc-MHe">
@@ -252,24 +202,6 @@ System</string>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7n-7F-9ET" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="486.95652173913049" y="124.55357142857142"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="5gm-7M-lnz">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5pH-Pb-BYM" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9yH-rT-scB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Krh-jm-iMe" kind="relationship" relationship="rootViewController" id="obT-Gt-5qu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="t8k-Lu-qpk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3250.7246376811595" y="124.55357142857142"/>
         </scene>
         <!--Gerente-->
         <scene sceneID="Cg1-2x-Mru">
@@ -304,6 +236,9 @@ System</string>
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="withdrawMoneyAction:" destination="IfQ-jb-Qsz" eventType="touchUpInside" id="J8E-Fg-aRx"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xLr-Ki-dk7">
                                         <rect key="frame" x="0.0" y="75" width="354" height="50"/>
@@ -321,6 +256,9 @@ System</string>
                                                 <integer key="value" value="20"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="printReceiptAction:" destination="IfQ-jb-Qsz" eventType="touchUpInside" id="uXU-5J-sxr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -350,6 +288,148 @@ System</string>
             </objects>
             <point key="canvasLocation" x="1397" y="858"/>
         </scene>
+        <!--Caixa-->
+        <scene sceneID="S7e-RB-plA">
+            <objects>
+                <viewController id="1NP-V4-F75" customClass="SaleController" customModule="ProjectRosieJetson" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DzT-2w-aHR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Venda" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sz3-IK-dfV">
+                                <rect key="frame" x="20" y="30" width="374" height="41"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Wxi-Vl-Tad">
+                                <rect key="frame" x="30" y="578" width="354" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kuP-7t-xcu">
+                                        <rect key="frame" x="0.0" y="0.0" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3vW-EB-97r"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" title=" Pagar em dinheiro" image="dollarsign.circle.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="moneyPaymentAction:" destination="1NP-V4-F75" eventType="touchUpInside" id="NYe-Q6-5L4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cLE-KJ-gFX">
+                                        <rect key="frame" x="0.0" y="75" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="mCd-nI-2Re"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" title=" Pagar no cartão" image="creditcard.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="cardPaymentAction:" destination="1NP-V4-F75" eventType="touchUpInside" id="eEp-PL-CkN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rbH-pF-X12">
+                                        <rect key="frame" x="0.0" y="150" width="354" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="t8h-bh-dfn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <state key="normal" title=" Adicionar item" image="plus.circle.fill" catalog="system">
+                                            <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="addItemAction:" destination="1NP-V4-F75" eventType="touchUpInside" id="Yek-ge-lDw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="3mb-cZ-yoo">
+                                <rect key="frame" x="0.0" y="101" width="414" height="447"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="productCell" textLabel="lwp-DA-qcU" detailTextLabel="HiE-W8-7Fk" imageView="VAG-OW-1jZ" style="IBUITableViewCellStyleValue1" id="V3m-Zt-dT1" customClass="ProductTableViewCell" customModule="ProjectRosieJetson" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.5" width="374" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="V3m-Zt-dT1" id="onY-ow-0vp">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Código do produto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lwp-DA-qcU">
+                                                    <rect key="frame" x="59" y="12" width="144" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Nome do produto" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HiE-W8-7Fk">
+                                                    <rect key="frame" x="219.5" y="12" width="134.5" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="bag.fill" catalog="system" id="VAG-OW-1jZ">
+                                                    <rect key="frame" x="22.5" y="11" width="19" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="productCode" destination="lwp-DA-qcU" id="lCv-ju-biQ"/>
+                                            <outlet property="productName" destination="HiE-W8-7Fk" id="uH0-hn-Khs"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Wxi-Vl-Tad" firstAttribute="centerX" secondItem="vaW-cW-1JC" secondAttribute="centerX" id="1V5-x1-ugf"/>
+                            <constraint firstItem="Wxi-Vl-Tad" firstAttribute="top" secondItem="3mb-cZ-yoo" secondAttribute="bottom" constant="30" id="8kc-XF-hkR"/>
+                            <constraint firstItem="Wxi-Vl-Tad" firstAttribute="leading" secondItem="vaW-cW-1JC" secondAttribute="leading" constant="30" id="DBz-nj-Y0W"/>
+                            <constraint firstItem="Sz3-IK-dfV" firstAttribute="leading" secondItem="vaW-cW-1JC" secondAttribute="leading" constant="20" id="HX7-BR-sGY"/>
+                            <constraint firstItem="vaW-cW-1JC" firstAttribute="bottom" secondItem="Wxi-Vl-Tad" secondAttribute="bottom" constant="30" id="SK5-dp-s5t"/>
+                            <constraint firstItem="3mb-cZ-yoo" firstAttribute="leading" secondItem="vaW-cW-1JC" secondAttribute="leading" id="Zse-oQ-938"/>
+                            <constraint firstItem="vaW-cW-1JC" firstAttribute="trailing" secondItem="Sz3-IK-dfV" secondAttribute="trailing" constant="20" id="cIq-eY-njL"/>
+                            <constraint firstItem="Sz3-IK-dfV" firstAttribute="top" secondItem="vaW-cW-1JC" secondAttribute="top" constant="30" id="dwB-6L-O7L"/>
+                            <constraint firstItem="3mb-cZ-yoo" firstAttribute="top" secondItem="Sz3-IK-dfV" secondAttribute="bottom" constant="30" id="eC5-53-lFC"/>
+                            <constraint firstItem="vaW-cW-1JC" firstAttribute="trailing" secondItem="Wxi-Vl-Tad" secondAttribute="trailing" constant="30" id="kKw-dh-dyJ"/>
+                            <constraint firstItem="vaW-cW-1JC" firstAttribute="trailing" secondItem="3mb-cZ-yoo" secondAttribute="trailing" id="sy4-aS-v2J"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vaW-cW-1JC"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Caixa" id="O6V-DS-79p"/>
+                    <connections>
+                        <outlet property="tableView" destination="3mb-cZ-yoo" id="FLK-3C-qDI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vs9-we-ui6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3259" y="125"/>
+        </scene>
     </scenes>
     <resources>
         <image name="bag" catalog="system" width="128" height="128"/>
@@ -359,6 +439,9 @@ System</string>
         <image name="cart" catalog="system" width="128" height="102"/>
         <image name="cart.badge.plus" catalog="system" width="128" height="98"/>
         <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <image name="creditcard.fill" catalog="system" width="128" height="91"/>
+        <image name="dollarsign.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="printer.fill" catalog="system" width="128" height="111"/>
     </resources>
 </document>
