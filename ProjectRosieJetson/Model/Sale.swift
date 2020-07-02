@@ -8,19 +8,28 @@
 
 import Foundation
 
-struct Sale: Codable {
+class Sale {
     
     let id = UUID()
     
     var products: [Product] = []
-    var payment: Payment?
+    var payment: Payment? = nil
     var date: Date = Date()
     
     var total: Double {
         products.reduce(0.0) { $0 + $1.price }
     }
     
-    mutating func pay(method: Payment.PaymentMethod) {
-        payment = Payment(type: method.rawValue)
+    func addProduct(_ product: Product) {
+        self.products.append(product)
+    }
+    
+    func removeProduct(index: Int) {
+        self.products.remove(at: index)
+    }
+    
+    func pay(creator: PaymentFactory) -> String {
+        payment = creator.createPayment()
+        return payment?.pay(value: total) ?? "Erro!"
     }
 }

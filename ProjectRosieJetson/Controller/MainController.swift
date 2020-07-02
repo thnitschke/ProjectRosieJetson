@@ -10,7 +10,8 @@ import UIKit
 
 class MainController: UIViewController {
     
-    let system = Operator()
+    // Use singleton operator
+    let system = Operator.shared()
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -10,11 +10,23 @@ import Foundation
 
 class Operator {
     
+    // Singleton pattern
+    private static var sharedOperator: Operator = {
+        return Operator()
+    }()
+    
     var todayDate: Date? = Calendar.current.startOfDay(for: Date())
     var receipt: Double? = nil
     private var cashierList: [Cashier] = []
     private var totalValuesPerDay: [Date: Double] = [:]
     
+    private init() {}
+    
+    class func shared() -> Operator {
+        return sharedOperator
+    }
+    
+    // Facade pattern methods
     func openCashier(by operatorName: String) -> Cashier {
         if todayDate == nil {
             todayDate = Calendar.current.startOfDay(for: Date())

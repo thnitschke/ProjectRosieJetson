@@ -8,36 +8,96 @@
 
 import Foundation
 
-struct Payment: Codable {
+// Factory pattern
+protocol PaymentFactory {
+
+    func createPayment() -> Payment
     
-    let id = UUID()
-    var type: Int
+    func pay(value: Double) -> String
+}
+
+// Default implementation
+extension PaymentFactory {
     
-    init(type: Int) {
-        self.type = type
+    func pay(value: Double) -> String {
+        let payment = createPayment()
         
-        if type != PaymentMethod.cash.rawValue {
-            sleep(externalTransactionTime())
-        }
+        return payment.pay(value: value)
     }
-    
-    func externalTransactionTime() -> UInt32 {
-        return 2
+}
+
+class DebitCardFactory: PaymentFactory {
+
+    func createPayment() -> Payment {
+        return DebitCardPayment()
     }
-    
-    enum PaymentMethod: Int {
-        case cash, creditCard, debitCard
-        
-        func description() -> String {
-            switch self {
-            case .cash:
-                return "Dinheiro"
-            case .creditCard:
-                return "Cartão de Crédito"
-            case .debitCard:
-                return "Cartão de Débito"
-            }
-        }
+}
+
+class CreditCardFactory: PaymentFactory {
+
+    func createPayment() -> Payment {
+        return CreditCardPayment()
     }
+}
+
+class CashFactory: PaymentFactory {
     
+    func createPayment() -> Payment {
+        return CashPayment()
+    }
+}
+
+protocol Payment {
+    
+    func pay(value: Double) -> String
+}
+
+extension Payment {
+    
+    func pay(value: Double) -> String {
+        return "Erro! Pagamento inválido."
+    }
+}
+
+struct DebitCardPayment: Payment {
+
+    func pay(value: Double) -> String {
+        return "Valor R$\(value) pago através de cartão de débito."
+    }
+}
+
+struct CreditCardPayment: Payment {
+
+    func pay(value: Double) -> String {
+        return "Valor R$\(value) pago através de cartão de crédito."
+    }
+
+}
+
+struct CashPayment: Payment {
+    
+    func pay(value: Double) -> String {
+        return "Valor R$\(value) pago em dinheiro."
+    }
+
+}
+
+// Strategy pattern
+protocol Strategy {
+
+    func runTransaction()
+}
+
+class CashStrategy: Strategy {
+
+    func runTransaction() {
+        sleep(0)
+    }
+}
+
+class CardProviderStrategy: Strategy {
+
+    func runTransaction() {
+        sleep(arc4random_uniform(4) + 2)
+    }
 }

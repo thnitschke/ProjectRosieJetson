@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Cashier: Codable {
+class Cashier {
     
     let id = UUID()
     
@@ -18,11 +18,15 @@ struct Cashier: Codable {
     
     var sales: [Sale] = []
     
-    mutating func close() {
+    init(operatorName: String) {
+        self.operatorName = operatorName
+    }
+    
+    func close() {
         closingDate = Date()
     }
     
-    mutating func startSale() -> Sale {
+    func startSale() -> Sale {
         let newSale = Sale()
         sales.append(newSale)
         return newSale

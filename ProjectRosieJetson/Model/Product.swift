@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Product: Codable {
+struct Product {
     
     let id = UUID()
     private let priceChoices = [

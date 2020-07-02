@@ -12,6 +12,10 @@ class SaleController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     var previousController: UIViewController?
     var currentSale: Sale?
+    // Strategy object
+    var paymentStrategy: Strategy = CashStrategy()
+    // Observable object
+    let cartManager = CartManager()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -20,16 +24,26 @@ class SaleController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        cartManager.add(subscriber: self)
+    }
+    
+    func update(strategy: Strategy) {
+        self.paymentStrategy = strategy
     }
     
     @IBAction func moneyPaymentAction(_ sender: UIButton) {
-        currentSale?.pay(method: .cash)
-        presentClosingAlert()
+        guard let sale = currentSale else { return }
+        update(strategy: CashStrategy())
+        paymentStrategy.runTransaction()
+        presentClosingAlert(text: sale.pay(creator: CashFactory()))
     }
     
     @IBAction func cardPaymentAction(_ sender: UIButton) {
-        currentSale?.pay(method: .creditCard)
-        presentClosingAlert()
+        guard let sale = currentSale else { return }
+        update(strategy: CardProviderStrategy())
+        paymentStrategy.runTransaction()
+        presentClosingAlert(text: sale.pay(creator: CreditCardFactory()))
     }
     
     
@@ -45,8 +59,8 @@ class SaleController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             guard let self = self else { return }
             
-            self.currentSale?.products.append(Product(code: 100, name: alert.textFields?.first?.text ?? "Arroz"))
-            self.tableView.insertRows(at: [IndexPath(row: (self.currentSale?.products.count)! - 1, section: 0)], with: .automatic)
+            self.cartManager.add(product: Product(code: 100, name: alert.textFields?.first?.text ?? "Arroz"))
+//            self.tableView.insertRows(at: [IndexPath(row: self.cartManager.count - 1, section: 0)], with: .automatic)
         }))
         
         self.present(alert, animated: true)
@@ -78,8 +92,8 @@ class SaleController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        currentSale?.products.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .automatic)
+        cartManager.remove(index: indexPath.row)
+//        tableView.deleteRows(at: [indexPath], with: .automatic)
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -89,15 +103,17 @@ class SaleController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewWillDisappear(_ animated: Bool) {
         if isBeingDismissed {
             if currentSale?.payment == nil {
-                currentSale?.pay(method: .debitCard)
-                presentClosingAlert()
+                guard let sale = currentSale else { return }
+                update(strategy: CardProviderStrategy())
+                paymentStrategy.runTransaction()
+                presentClosingAlert(text: sale.pay(creator: DebitCardFactory()))
             }
         }
     }
     
-    func presentClosingAlert() {
+    func presentClosingAlert(text: String) {
         
-        let alert = UIAlertController(title: "Pagamento realizado com sucesso!", message: "Valor R$\(currentSale?.total ?? 0.0) pago através de \(Payment.PaymentMethod(rawValue: (currentSale?.payment!.type)!)!.description()).", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Pagamento realizado com sucesso!", message: text, preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         
@@ -106,4 +122,13 @@ class SaleController: UIViewController, UITableViewDataSource, UITableViewDelega
         previousController?.present(alert, animated: true)
     }
     
+}
+
+// Method called when observed object changes
+extension SaleController: CartSubscriber {
+    
+    func accept(changed cart: [Product]) {
+        currentSale?.products = cart
+        tableView.reloadData()
+    }
 }

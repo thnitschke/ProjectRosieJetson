@@ -26,7 +26,7 @@ class ManagerController: UIViewController {
     }
     
     @IBAction func withdrawMoneyAction(_ sender: UIButton) {
-        presentAlert(title: "Retirada de valores", message: "\((system?.withdrawMoney())!)")
+        presentAlert(title: "Retirada de valores", message: "R$\((system?.withdrawMoney())!) retirados.")
     }
     
     @IBAction func printReceiptAction(_ sender: UIButton) {
